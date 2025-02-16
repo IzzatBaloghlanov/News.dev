@@ -2,27 +2,46 @@ import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import NewsItem from "./NewsItem";
 
-const NewsBoard = ({category}) => {
+const NewsBoard = ({ category }) => {
+  const [articles, setArticles] = useState([]);
+  const APIKEY = "4074717afe1f49a2bb1ede488768ef76";
 
-    const [articles, setArticles] = useState([]);
-    const APIKEY = "4074717afe1f49a2bb1ede488768ef76";
-    useEffect(() => {
+  useEffect(() => {
+    const fetchArticles = async () => {
+      try {
         let url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${APIKEY}`;
-        fetch(url).then(response=>response.json()).then(data=>setArticles(data.articles));
-    }, [category]);
+        let response = await fetch(url);
+        let data = await response.json();
+        setArticles(data.articles);
+      } catch (error) {
+        console.error("Error fetching the news articles:", error);
+      }
+    };
 
+    fetchArticles();
+  }, [category]);
 
   return (
     <div>
-        <h2 className="text-center my-4">Latest <span className="badge bg-danger">News</span></h2>
-        {articles.map((news,index)=>{
-            return <NewsItem key = {index} title = {news.title} description = {news.description} imageUrl = {news.urlToImage} newsUrl = {news.url}/>
-        })}
+      <h1 className="text-center my-4"><span className='badge bg-danger text-light'>News</span></h1>
+   
+    <div className="news-board">
+      {articles.map((article, index) => (
+        <NewsItem
+          key={index}
+          title={article.title}
+          description={article.description}
+          imageUrl={article.urlToImage}
+          newsUrl={article.url}
+        />
+      ))}
     </div>
-  )
-}
+    </div>
+  );
+};
+
 NewsBoard.propTypes = {
-  category: PropTypes.string,
+  category: PropTypes.string.isRequired,
 };
 
 export default NewsBoard;
