@@ -9,7 +9,7 @@ const NewsItem = ({ title, description, imageUrl, newsUrl }) => {
             <div className="card-body ">
                 <h5 className="card-title">{title.slice(0, 50)}</h5>
                 <p className="card-text">{description ? description.slice(0, 90) : "News from around the world. Stay informed with the latest updates on technology, sports, and more."}</p>
-                <a href={newsUrl} className="btn btn-primary">Read More</a>
+                <a href={newsUrl} className="btn btn-danger">Read More</a>
             </div>
         </div>
 

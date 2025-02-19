@@ -14,7 +14,7 @@ const Footer = () => {
           <hr className="w-100 clearfix d-md-none" />
 
           <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-            <h6 className="text-uppercase mb-4 font-weight-bold bg-primary badge">Categories</h6>
+            <h6 className="text-uppercase px-3 py-3 mb-4 font-weight-bold bg-danger badge">Categories</h6>
             <p>
               <a href="#" className="text-white text-decoration-none">Technology</a>
             </p>
@@ -35,7 +35,7 @@ const Footer = () => {
           <hr className="w-100 clearfix d-md-none" />
 
           <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-            <h6 className="text-uppercase mb-4 font-weight-bold bg-primary badge">Contact</h6>
+            <h6 className="text-uppercase px-4 py-3 mb-4 font-weight-bold bg-danger badge">Contact</h6>
             <p>
               <i className="fas fa-home mr-3">Adress:</i> New York, 1001 St, US
             </p>

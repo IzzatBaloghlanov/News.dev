@@ -3,17 +3,17 @@ import PropTypes from 'prop-types';
 
 const Navbar = ({ setCategory }) => {
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark p-4 sticky-top " >
+        <nav className="navbar navbar-expand-lg navbar-light bg-danger p-4 sticky-top " >
             <div className="container-fluid">
                
-                <h3 className="navbar-brand"><span className="badge bg-danger text-light fs-4">News.dev</span></h3>
+                <h3 className="navbar-brand"><span className="badge bg-dark text-light fs-4">News.dev</span></h3>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className="navbar-nav ">
+                <div className="collapse navbar-collapse " id="navbarNav">
+                    <ul className="navbar-nav">
 
-                        <li className="nav-item fs-5 ">
+                        <li className="nav-item fs-5 text-dark ">
                             <div className="nav-link" onClick={() => setCategory("technology")}>Technology</div>
                         </li>
 
