@@ -3,7 +3,7 @@ import img from '../assets/NEWS.jpg';
 
 const NewsItem = ({ title, description, imageUrl, newsUrl }) => {
     return (
-        <div className="container card bg-dark text-light mb-5 my-5 d-inline-block mx-3 px-2 py-2" style={{ maxWidth: "366px" }}>
+        <div className="card bg-dark text-light mb-5 my-5 d-inline-block mx-3 px-2 py-2" style={{ maxWidth: "366px" }}>
             <img src={imageUrl ? imageUrl : img} style={{ height: "230px", width: "350px" }} className="card-img-top" alt="News" />
             <div className="card-body ">
                 <h5 className="card-title">{title.slice(0, 50)}</h5>
