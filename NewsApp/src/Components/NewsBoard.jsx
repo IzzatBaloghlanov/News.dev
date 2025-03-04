@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import NewsItem from "./NewsItem";
 
-const API_KEY = "4074717afe1f49a2bb1ede488768ef76";  // Buraya öz API açarını qoy
+const API_KEY = "4074717afe1f49a2bb1ede488768ef76";  
 
 const NewsBoard = ({ category }) => {
   const [articles, setArticles] = useState([]);
