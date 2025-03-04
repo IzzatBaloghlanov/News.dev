@@ -2,20 +2,27 @@ import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import NewsItem from "./NewsItem";
 
-const API_KEY = "7b88991b1570a9615380bdc87011d329";  // Buraya öz API açarını qoy
+const API_KEY = "4074717afe1f49a2bb1ede488768ef76";  // Buraya öz API açarını qoy
 
 const NewsBoard = ({ category }) => {
   const [articles, setArticles] = useState([]);
-  
+
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        let url = `https://gnews.io/api/v4/top-headlines?token=${API_KEY}&lang=en&category=${category}`;
+        let url = `https://newsapi.org/v2/top-headlines?apiKey=${API_KEY}&category=${category}&language=en`;
+
         let response = await fetch(url);
         let data = await response.json();
-        setArticles(data.articles);
+
+        if (data.articles) {
+          setArticles(data.articles);
+        } else {
+          setArticles([]); // Əgər `articles` boş gəlirsə, boş array yaz
+        }
       } catch (error) {
         console.error("Error fetching the news articles:", error);
+        setArticles([]); // Xəta olduqda boş array yaz ki, səhv verməsin
       }
     };
 
@@ -24,7 +31,9 @@ const NewsBoard = ({ category }) => {
 
   return (
     <div>
-      <h1 className="text-center my-4"><span className='badge bg-danger text-light'>News</span></h1>
+      <h1 className="text-center my-4 news">
+        <span className='badge bg-danger text-light'>News</span>
+      </h1>
       <div className="news-board">
         {articles.length > 0 ? (
           articles.map((article, index) => (
@@ -32,7 +41,7 @@ const NewsBoard = ({ category }) => {
               key={index}
               title={article.title}
               description={article.description}
-              imageUrl={article.image}
+              imageUrl={article.urlToImage}  
               newsUrl={article.url}
             />
           ))
