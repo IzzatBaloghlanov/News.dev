@@ -40,8 +40,8 @@ const NewsBoard = ({ category }) => {
   );
 };
 
+export default NewsBoard;
+
 NewsBoard.propTypes = {
   category: PropTypes.string.isRequired,
 };
-
-export default NewsBoard;

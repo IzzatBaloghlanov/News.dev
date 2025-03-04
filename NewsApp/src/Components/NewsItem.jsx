@@ -16,11 +16,12 @@ const NewsItem = ({ title, description, imageUrl, newsUrl }) => {
     )
 }
 
+
+export default NewsItem;
+
 NewsItem.propTypes = {
     title: PropTypes.string,
     description: PropTypes.string,
     imageUrl: PropTypes.string,
     newsUrl: PropTypes.string
 };
-
-export default NewsItem;

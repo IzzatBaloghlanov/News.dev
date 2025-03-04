@@ -40,8 +40,9 @@ const Navbar = ({ setCategory }) => {
     );
 };
 
+
+export default Navbar
+
 Navbar.propTypes = {
     setCategory: PropTypes.func,
 };
-
-export default Navbar
