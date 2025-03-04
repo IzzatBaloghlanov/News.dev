@@ -10,7 +10,7 @@ const App = () => {
     <div>
       <Navbar setCategory={setCategory} />
       <NewsBoard category={category} />
-      <Footer setCategory={setCategory} />
+      <Footer setCategory={setCategory} /> {/* ✅ Burada ötürdük */}
     </div>
   );
 };
