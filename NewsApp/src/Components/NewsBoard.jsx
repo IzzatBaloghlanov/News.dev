@@ -18,11 +18,11 @@ const NewsBoard = ({ category }) => {
         if (data.articles) {
           setArticles(data.articles);
         } else {
-          setArticles([]); // Əgər `articles` boş gəlirsə, boş array yaz
+          setArticles([]); 
         }
       } catch (error) {
         console.error("Error fetching the news articles:", error);
-        setArticles([]); // Xəta olduqda boş array yaz ki, səhv verməsin
+        setArticles([]); 
       }
     };
 
